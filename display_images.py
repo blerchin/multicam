@@ -146,7 +146,7 @@ def get_image_key(fname):
     return '%s.%s' % (time, split[1])
 
 
-dirname = 'images' 
+dirname = os.path.join(os.path.dirname(__file__), 'images')
 images = os.listdir(dirname)
 images = [image for image in images if 'thumb' not in image]
 images.sort(key=get_image_key)
